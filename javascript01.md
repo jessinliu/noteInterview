@@ -35,3 +35,62 @@
 
 ## ==的隐式转换规则
 1. `==`只需要值相等，无需类型相等；`nulll,undefined`在`==`下互相等且自身等
+
+## number能表示的整数的最大范围
+1. 安全的整数范围：15位数以下，最大的整数是Number.MAX_SAFE_INTEGER(9007199254740991)，最小的整数是Number.MIN_SAFE_INTEGER(-9007199254740991)
+2. ID很多都是超出这个范围的，所以最好是string类型
+
+## 2.toFixed()
+> (2).toFixed()
+
+## 查询某个对象是否有某个属性的方法
+#### 使用in关键字
+该方法可以判断对象的自有属性和继承来的属性是否存在
+#### 使用对象的hasOwnProperty()方法
+该方法只能判断自有属性是否存在，对于继承属性会返回false
+#### 使用undefined判断
+自有属性和继承属性均可判断
+```
+var o = {x:1}
+o.x!==undefined;//true
+o.y!==undefined;//false
+o.toString!==undefined;//true
+```
+> 该方法存在一个问题，如果属性的值就是undefined的话，该方法不能返回想要的结果，如下：
+```
+var o = {x:undefined}
+o.x!==undefined;//false,属性存在，但是值是undefined
+o.y!==undefined;//false
+o.toString!==undefined;//true
+
+```
+
+#### 在条件语句中判断
+```
+var o = {}
+if(o.x) o.x += 1 // 如果x是undefined,null,false," ",0或NaN,它将保持不变
+
+```
+
+#### propertyIs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
