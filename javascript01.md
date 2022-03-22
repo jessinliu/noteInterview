@@ -17,7 +17,7 @@
    区分基本数据类型，科返回7种数据类型：`number、string、boolean、undefined、object、function`，以及es6新增`symbol`
 2. `typeof`能正确区分数据类型吗？
    不能。对于原始类型，除了`null`都能正确判断；对于引用类型，除了`function`都不能，都会返回`"Object"`
-3. `typeif`注意事项
+3. `typeof`注意事项
    + typeof 返回值为 string格式
    + typeof 为定义的变量不会报错， 返回undefined
    + typeof(null)-> "object"
@@ -72,14 +72,46 @@ if(o.x) o.x += 1 // 如果x是undefined,null,false," ",0或NaN,它将保持不�
 
 ```
 
-#### propertyIs
+#### propertyIsEnumerable()
+propertyIsEnumberable()是hasOwnProperty()的增强版，这个方法的用法与hasOwnProperty()相同，但当检查属性是自有属性（非继承）且这个属性是可枚举的，才会返回true
 
+## splice和slice区别
+#### slice:截取
+- 截取数组为主，也可以截取字符串
+- 返回新的数组，也含截取的元素
+- 不改变原数组
+#### splice:数组增删改
+- 只能对数组进行增删改，字符串无效
+- 返回新的数组，内容是被删减的元素
+- 会改变原数组
 
+## ==和===区别
+- ===是严格相等，要求数据类型和值都要相等；==只需要🈯️相等
+- ==会发生隐式转换，===不会发生隐式类型转换
 
+## 构造函数和普通函数的区别
+## 类数组和数组区别
+> 类数组：类数组对象，就是指可以通过索引属性访问元素并且拥有`length`属性的对象
+> 区别：
+ 1. 类数组不具备数组的方法（splice，split，push）
+ 2. 类数组是一个普通对象，数组类型是Array
+> 为什么设置类数组：类数组对象的设计目的更多是只让你**遍历和访问下标**，而不是取添加或删除元素
 
+## null与undefined的区别
+- null表示一个“无”的对象，也就是该初不应该有值；而且undefined表示未定义
+- 在转换为数字时结果不同，Number(null)为0，而Number(undefined)为NaN
+#### 使用场景上
+1. null:
+   + 作为函数的参数，表示该函数的参数不是对象
+   + 作为对象原型链的终点
+2. undefined:
+   + 声明变量未赋值，等于undefined
+   + 调用函数时，未提供参数值，该参数等于undefined
+   + 对象没有赋值属性，该属性的值为undefined
+   + 函数没有返回值时，默认返回undefined
 
-
-
+## a.b.c.d 和 a['b']['c']['d']，哪个性能更高？
+[参考](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/111)
 
 
 
