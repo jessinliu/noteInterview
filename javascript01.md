@@ -1,6 +1,6 @@
 ## ES
 > ES全称ECMAScript，ECMAScript是ECMA制定的标准化脚本语言
-> ES6以上版本的区别[参考](`https://juejin.cn/post/6844903811622912014`)
+> ES6以上版本的区别[**参考**](`https://juejin.cn/post/6844903811622912014`)
 
 ## 动态类型和数据类型
 #### 数据类型
